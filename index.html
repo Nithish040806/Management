@@ -1,0 +1,68 @@
+ 
+using System; 
+namespace student 
+{ 
+    internal class Program 
+    { 
+        static void Main(string[] args) 
+        { 
+            nikas students s = new  nikas students (); 
+            s.Acceptstudentdetails(); 
+            s.CheckScholarshipEligible(); 
+            s.Display(); 
+            Console.ReadKey(); 
+        } 
+    } 
+    class nikas students 
+    { 
+        public int admno; 
+        public string sname, stream; 
+        public double per; 
+        public double fees; 
+        public bool IsScholarship; 
+        const double Scholarship = 0.25; 
+        // Constructor 
+        public yashwanthstudents() 
+        { 
+            fees = 5000; 
+        } 
+        public void Acceptstudentdetails() 
+        { 
+            Console.Write("Enter Admission Number: "); 
+            admno = Convert.ToInt32(Console.ReadLine()); 
+            Console.Write("Enter Student Name: "); 
+            sname = Console.ReadLine(); 
+            Console.Write("Enter Stream: "); 
+            stream = Console.ReadLine(); 
+ 
+            Console.Write("Enter Percentage: "); 
+            per = Convert.ToDouble(Console.ReadLine()); 
+        } 
+        public void CheckScholarshipEligible() 
+        { 
+            if (per >= 75) 
+{ 
+IsScholarship = true; 
+fees = fees - 
+} 
+else 
+{ 
+(fees * Scholarship); 
+IsScholarship = false; 
+} 
+} 
+public void Display() 
+{ 
+Console.WriteLine("
+\
+nStudent Details"); 
+Console.WriteLine("Admission No : " + admno); 
+Console.WriteLine("Name : " + sname); 
+Console.WriteLine("Stream : " + stream); 
+Console.WriteLine("Percentage : " + per); 
+Console.WriteLine("Scholarship : " + (IsScholarship ? "Eligible" : "Not 
+Eligible")); 
+Console.WriteLine("Fees : " + fees); 
+} 
+} 
+} 
